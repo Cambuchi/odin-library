@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/modern-normalize.css">
+	<title>Cam's Library</title>
+</head>
+
+<body>
+	<div id="header">
+		<h1>Cam's Library</h1>
+		<button id="new-btn">Add New Book</button>
+	</div>
+
+	<div id="input-modal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close">&times;</span>
+				<h2>Add a New Book</h2>
+			</div>
+			<form class="modal-body" id="bookForm" onsubmit="return false">
+				<p id="error" hidden>Please fill out all fields.</p>
+				<h3>Enter the book's title:</h3><br>
+				<input type="text" name="title" id="bookTitle" required>
+				<h3>Enter the book's author:</h3><br>
+				<input type="text" name="author" id="bookAuthor" required>
+				<h3>Have you read this book yet:</h3><br>
+				<input type="radio" name="choice" value="yes" id="choice-yes" required> 
+				<label for="choice-yes">Yes</label>
+				<input type="radio" name="choice" value="no" id="choice-no">
+				<label for="choice-no">No</label><br>
+				<button type="submit">Submit</button>
+			</form>
+			<div class="modal-footer">
+				<h3>Happy Reading!</h3>
+			</div>
+		</div>
+	</div>
+
+	<div id="library">
+
+	</div>
+
+	<script src="scripts/main.js"></script>
+</body>
+
+</html>
