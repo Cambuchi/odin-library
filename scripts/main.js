@@ -5,9 +5,9 @@ function Book(title, author, pages, read, imgUrl) {
     this.imgLink = imgUrl;
 
     if (read === "yes") {
-        this.read = "have read";
+        this.read = "Status: Read";
     } else {
-        this.read = "have not read"
+        this.read = "Status: Not Read"
     }
 };
 
@@ -65,7 +65,7 @@ function displayBook(book, index) {
     cardRead.classList.add('read-status')
     cardRead.textContent = book.read
 
-    if (book.read == 'have read') {
+    if (book.read == 'Status: Read') {
         item.classList.add(`read`);
     } else {
         item.classList.add('not-read')
@@ -121,14 +121,14 @@ function addReadBtns() {
             console.log('read detected')
             btn.parentNode.classList.remove('read');
             btn.parentNode.classList.add('not-read');
-            btn.previousSibling.textContent = 'have not read';
-            myLibrary[btn.parentNode.dataset.index]['read'] = 'have not read';
+            btn.previousSibling.textContent = 'Status: Not Read';
+            myLibrary[btn.parentNode.dataset.index]['read'] = 'Status: Not Read';
             localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
         } else {
             btn.parentNode.classList.remove('not-read');
             btn.parentNode.classList.add('read');
-            btn.previousSibling.textContent = 'have read';
-            myLibrary[btn.parentNode.dataset.index]['read'] = 'have read';
+            btn.previousSibling.textContent = 'Status: Read';
+            myLibrary[btn.parentNode.dataset.index]['read'] = 'Status: Read';
             localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
         }
     }));
