@@ -1,3 +1,31 @@
+class Book {
+    constructor(title, author, pages, read, imgUrl) {
+        this.title = title; 
+        this.author = author;
+        this.pages = pages;
+        this.imgLink = imgUrl;
+    
+        if (read === "yes") {
+            this.read = "Status: Read";
+        } else {
+            this.read = "Status: Not Read"
+        }
+    }
+
+    get current() {
+        return this.read;
+    }
+
+    set current(status) {
+        if (status === "yes") {
+            this.read = "Status: Read";
+        } else {
+            this.read = "Status: Not Read"
+        }
+    }
+}
+
+
 function Book(title, author, pages, read, imgUrl) {
     this.title = title; 
     this.author = author;
